@@ -1,4 +1,4 @@
-namespace Web_API_template
+namespace WebAPI_template
 {
     public class WeatherForecast
     {

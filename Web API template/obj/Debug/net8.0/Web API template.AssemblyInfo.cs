@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web API template")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99261b3aa68f717e5fd3bd45578bd8f819325109")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web API template")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web API template")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
