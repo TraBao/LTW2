@@ -11,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IBookRepository, SQLBookRepository>();
 builder.Services.AddScoped<IAuthorRepository, SQLAuthorRepository>();
 builder.Services.AddScoped<IPublisherRepository, SQLPublisherRepository>();
+builder.Services.AddScoped<IBookAuthorRepository, SQLBookAuthorRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

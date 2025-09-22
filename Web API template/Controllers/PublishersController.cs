@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI_simple.CustomActionFilters;
 using WebAPI_simple.Models.DTO;
 using WebAPI_simple.Repositories;
 
@@ -30,10 +31,15 @@ namespace WebAPI_simple.Controllers
         }
 
         [HttpPost("add-publisher")]
+        [ValidateModel]
         public IActionResult AddPublisher([FromBody] AddPublisherRequestDTO addPublisherRequestDTO)
         {
-            var publisher = _publisherRepository.AddPublisher(addPublisherRequestDTO);
-            return Ok(publisher);
+            var newPublisher = _publisherRepository.AddPublisher(addPublisherRequestDTO);
+            if (newPublisher == null)
+            {
+                return BadRequest($"Tên nhà xuất bản '{addPublisherRequestDTO.Name}' đã tồn tại.");
+            }
+            return CreatedAtAction(nameof(GetPublisherById), new { id = newPublisher.Id }, newPublisher);
         }
 
         [HttpPut("update-publisher-by-id/{id}")]
@@ -46,8 +52,17 @@ namespace WebAPI_simple.Controllers
         [HttpDelete("delete-publisher-by-id/{id}")]
         public IActionResult DeletePublisherById(int id)
         {
+            var publisherExists = _publisherRepository.GetPublisherById(id);
+            if (publisherExists == null)
+            {
+                return NotFound();
+            }
             var deletedPublisher = _publisherRepository.DeletePublisherById(id);
-            return Ok(deletedPublisher);
+            if (deletedPublisher == null)
+            {
+                return BadRequest($"Không thể xóa Nhà xuất bản này vì vẫn còn sách tham chiếu.");
+            }
+            return NoContent();
         }
     }
 }

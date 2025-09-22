@@ -79,6 +79,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI_simple.Controllers.BookAuthorsController",
+    "Method": "AddBookAuthor",
+    "RelativePath": "api/book-authors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPI_simple.Controllers.AddBookAuthorRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI_simple.Controllers.BooksController",
     "Method": "AddBook",
     "RelativePath": "api/Books/add-book",

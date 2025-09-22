@@ -32,15 +32,29 @@ namespace WebAPI_simple.Repositories
             return publisher;
         }
 
-        public AddPublisherRequestDTO AddPublisher(AddPublisherRequestDTO addPublisherRequestDTO)
+        public PublisherDTO? AddPublisher(AddPublisherRequestDTO addPublisherRequestDTO)
         {
+            var existingPublisher = _dbContext.Publishers
+                .FirstOrDefault(p => p.Name.ToLower() == addPublisherRequestDTO.Name.ToLower());
+
+            if (existingPublisher != null)
+            {
+                return null;
+            }
+
             var publisherDomain = new Publishers()
             {
                 Name = addPublisherRequestDTO.Name
             };
             _dbContext.Publishers.Add(publisherDomain);
             _dbContext.SaveChanges();
-            return addPublisherRequestDTO;
+            var publisherDto = new PublisherDTO()
+            {
+                Id = publisherDomain.Id,
+                Name = publisherDomain.Name
+            };
+
+            return publisherDto;
         }
 
         public PublisherNoIdDTO UpdatePublisherById(int id, PublisherNoIdDTO publisherNoIdDTO)
@@ -56,6 +70,11 @@ namespace WebAPI_simple.Repositories
 
         public Publishers? DeletePublisherById(int id)
         {
+            var hasBooks = _dbContext.Books.Any(b => b.PublisherID == id);
+            if (hasBooks)
+            {
+                return null;
+            }
             var publisherDomain = _dbContext.Publishers.FirstOrDefault(p => p.Id == id);
             if (publisherDomain != null)
             {

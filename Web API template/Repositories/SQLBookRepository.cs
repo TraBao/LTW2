@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebAPI_simple.Models.Domain;
 using WebAPI_simple.Data;
+using WebAPI_simple.Helpers;
+using WebAPI_simple.Models.Domain;
 using WebAPI_simple.Models.DTO;
 
 namespace WebAPI_simple.Repositories
@@ -59,8 +60,48 @@ namespace WebAPI_simple.Repositories
             return bookWithDomain;
         }
 
-        public AddBookRequestDTO AddBook(AddBookRequestDTO addBookRequestDTO)
+        public Result<Books> AddBook(AddBookRequestDTO addBookRequestDTO)
         {
+            const int MAX_BOOKS_PER_AUTHOR = 20;
+            const int MAX_BOOKS_PER_PUBLISHER_PER_YEAR = 100;
+            if (addBookRequestDTO.AuthorIds == null || !addBookRequestDTO.AuthorIds.Any())
+            {
+                return Result<Books>.Failure("Sách phải có ít nhất một tác giả.");
+            }
+
+            var publisherExists = _dbContext.Publishers.Any(p => p.Id == addBookRequestDTO.PublisherID);
+            if (!publisherExists)
+            {
+                return Result<Books>.Failure($"Publisher với ID '{addBookRequestDTO.PublisherID}' không tồn tại.");
+            }
+            var validAuthorCount = _dbContext.Authors.Count(a => addBookRequestDTO.AuthorIds.Contains(a.Id));
+            if (validAuthorCount != addBookRequestDTO.AuthorIds.Count)
+            {
+                return Result<Books>.Failure("Một hoặc nhiều Author ID không tồn tại.");
+            }
+            var titleExists = _dbContext.Books.Any(b =>
+                b.Title.ToLower() == addBookRequestDTO.Title.ToLower() &&
+                b.PublisherID == addBookRequestDTO.PublisherID);
+            if (titleExists)
+            {
+                return Result<Books>.Failure($"Tên sách '{addBookRequestDTO.Title}' đã tồn tại với nhà xuất bản này.");
+            }
+            foreach (var authorId in addBookRequestDTO.AuthorIds)
+            {
+                var currentBookCount = _dbContext.Books_Authors.Count(ba => ba.AuthorId == authorId);
+                if (currentBookCount >= MAX_BOOKS_PER_AUTHOR)
+                {
+                    return Result<Books>.Failure($"Tác giả với ID '{authorId}' đã đạt giới hạn {MAX_BOOKS_PER_AUTHOR} cuốn sách.");
+                }
+            }
+            var yearOfBook = addBookRequestDTO.DateAdded.Year;
+            var publisherBookCountInYear = _dbContext.Books.Count(b =>
+                b.PublisherID == addBookRequestDTO.PublisherID &&
+                b.DateAdded.Year == yearOfBook);
+            if (publisherBookCountInYear >= MAX_BOOKS_PER_PUBLISHER_PER_YEAR)
+            {
+                return Result<Books>.Failure($"Nhà xuất bản đã đạt giới hạn {MAX_BOOKS_PER_PUBLISHER_PER_YEAR} cuốn sách trong năm {yearOfBook}.");
+            }
             var bookDomainModel = new Books
             {
                 Title = addBookRequestDTO.Title,
@@ -83,42 +124,60 @@ namespace WebAPI_simple.Repositories
                 _dbContext.Books_Authors.Add(bookAuthor);
             }
             _dbContext.SaveChanges();
-
-            return addBookRequestDTO;
+            return Result<Books>.Success(bookDomainModel);
         }
 
         public AddBookRequestDTO? UpdateBookById(int id, AddBookRequestDTO bookDTO)
         {
             var bookDomain = _dbContext.Books.FirstOrDefault(n => n.Id == id);
-            if (bookDomain != null)
+            if (bookDomain == null)
             {
-                bookDomain.Title = bookDTO.Title;
-                bookDomain.Description = bookDTO.Description;
-                bookDomain.IsRead = bookDTO.IsRead;
-                bookDomain.DateRead = bookDTO.DateRead;
-                bookDomain.Rate = bookDTO.Rate;
-                bookDomain.Genre = bookDTO.Genre;
-                bookDomain.CoverUrl = bookDTO.CoverUrl;
-                bookDomain.DateAdded = bookDTO.DateAdded;
-                bookDomain.PublisherID = bookDTO.PublisherID;
-                _dbContext.SaveChanges();
-
-                var existingAuthors = _dbContext.Books_Authors.Where(a => a.BookId == id).ToList();
-                if (existingAuthors.Any())
-                {
-                    _dbContext.Books_Authors.RemoveRange(existingAuthors);
-                    _dbContext.SaveChanges();
-                }
-
-                foreach (var authorId in bookDTO.AuthorIds)
-                {
-                    var bookAuthor = new Book_Author() { BookId = id, AuthorId = authorId };
-                    _dbContext.Books_Authors.Add(bookAuthor);
-                }
-                _dbContext.SaveChanges();
-                return bookDTO;
+                return null;
             }
-            return null;
+            var titleExists = _dbContext.Books.Any(b =>
+                b.Title.ToLower() == bookDTO.Title.ToLower() &&
+                b.PublisherID == bookDTO.PublisherID &&
+                b.Id != id);
+
+            if (titleExists)
+            {
+                return null;
+            }
+
+            if (bookDTO.AuthorIds == null || !bookDTO.AuthorIds.Any())
+            {
+                return null;
+            }
+            var publisherExists = _dbContext.Publishers.Any(p => p.Id == bookDTO.PublisherID);
+            var validAuthorCount = _dbContext.Authors.Count(a => bookDTO.AuthorIds.Contains(a.Id));
+            if (!publisherExists || validAuthorCount != bookDTO.AuthorIds.Count)
+            {
+                return null;
+            }
+            bookDomain.Title = bookDTO.Title;
+            bookDomain.Description = bookDTO.Description;
+            bookDomain.IsRead = bookDTO.IsRead;
+            bookDomain.DateRead = bookDTO.DateRead;
+            bookDomain.Rate = bookDTO.Rate;
+            bookDomain.Genre = bookDTO.Genre;
+            bookDomain.CoverUrl = bookDTO.CoverUrl;
+            bookDomain.DateAdded = bookDTO.DateAdded;
+            bookDomain.PublisherID = bookDTO.PublisherID;
+
+            _dbContext.SaveChanges();
+            var existingAuthors = _dbContext.Books_Authors.Where(a => a.BookId == id).ToList();
+            if (existingAuthors.Any())
+            {
+                _dbContext.Books_Authors.RemoveRange(existingAuthors);
+            }
+
+            foreach (var authorId in bookDTO.AuthorIds)
+            {
+                var bookAuthor = new Book_Author() { BookId = id, AuthorId = authorId };
+                _dbContext.Books_Authors.Add(bookAuthor);
+            }
+            _dbContext.SaveChanges();
+            return bookDTO;
         }
 
         public Books? DeleteBookById(int id)

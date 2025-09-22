@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebAPI_simple.CustomActionFilters;
 using WebAPI_simple.Models.DTO;
 using WebAPI_simple.Repositories;
-using System.Net;
 
 namespace WebAPI_simple.Controllers
 {
@@ -10,14 +10,11 @@ namespace WebAPI_simple.Controllers
     public class BooksController : ControllerBase
     {
         private readonly IBookRepository _bookRepository;
-
-        // Inject IBookRepository vào constructor
         public BooksController(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
         }
 
-        // GET: /api/books/get-all-books
         [HttpGet("get-all-books")]
         public IActionResult GetAllBooks()
         {
@@ -25,7 +22,6 @@ namespace WebAPI_simple.Controllers
             return Ok(allBooks);
         }
 
-        // GET: /api/books/get-book-by-id/{id}
         [HttpGet("get-book-by-id/{id}")]
         public IActionResult GetBookById(int id)
         {
@@ -37,36 +33,55 @@ namespace WebAPI_simple.Controllers
             return Ok(book);
         }
 
-        // POST: /api/books/add-book
         [HttpPost("add-book")]
+        [ValidateModel]
         public IActionResult AddBook([FromBody] AddBookRequestDTO addBookRequestDTO)
         {
-            var addedBook = _bookRepository.AddBook(addBookRequestDTO);
-            return Ok(addedBook);
+            var result = _bookRepository.AddBook(addBookRequestDTO);
+            if (!result.IsSuccess)
+            {
+                return BadRequest(result.Error);
+            }
+            var addedBookDomain = result.Value;
+            var bookDto = _bookRepository.GetBookById(addedBookDomain.Id);
+            return CreatedAtAction(nameof(GetBookById), new { id = addedBookDomain.Id }, bookDto);
         }
 
-        // PUT: /api/books/update-book-by-id/{id}
         [HttpPut("update-book-by-id/{id}")]
+        [ValidateModel]
         public IActionResult UpdateBookById(int id, [FromBody] AddBookRequestDTO bookDTO)
         {
-            var updatedBook = _bookRepository.UpdateBookById(id, bookDTO);
-            if (updatedBook == null)
+            var updatedBookDto = _bookRepository.UpdateBookById(id, bookDTO);
+
+            if (updatedBookDto == null)
             {
-                return NotFound();
+                var bookExists = _bookRepository.GetBookById(id) != null;
+                if (!bookExists)
+                {
+                    return NotFound($"Không tìm thấy sách với ID = {id}.");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Không thể cập nhật sách. Vui lòng kiểm tra lại các lý do sau: \n" +
+                                                 "- Tên sách đã tồn tại với nhà xuất bản này. \n" +
+                                                 "- Sách phải có ít nhất một tác giả. \n" +
+                                                 "- Publisher ID và tất cả Author ID phải tồn tại.");
+                    return BadRequest(ModelState);
+                }
             }
-            return Ok(updatedBook);
+            return Ok(updatedBookDto);
         }
 
-        // DELETE: /api/books/delete-book-by-id/{id}
         [HttpDelete("delete-book-by-id/{id}")]
         public IActionResult DeleteBookById(int id)
         {
             var deletedBook = _bookRepository.DeleteBookById(id);
+
             if (deletedBook == null)
             {
                 return NotFound();
             }
-            return Ok(); // Hoặc trả về Ok(deletedBook) nếu muốn
+            return NoContent();
         }
     }
 }

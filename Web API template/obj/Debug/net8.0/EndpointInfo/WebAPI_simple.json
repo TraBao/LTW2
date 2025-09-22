@@ -136,6 +136,37 @@
         }
       }
     },
+    "/api/book-authors": {
+      "post": {
+        "tags": [
+          "BookAuthors"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBookAuthorRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBookAuthorRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBookAuthorRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Books/get-all-books": {
       "get": {
         "tags": [
@@ -441,21 +472,41 @@
   "components": {
     "schemas": {
       "AddAuthorRequestDTO": {
+        "required": [
+          "fullName"
+        ],
         "type": "object",
         "properties": {
           "fullName": {
-            "type": "string",
-            "nullable": true
+            "minLength": 3,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddBookAuthorRequestDto": {
+        "type": "object",
+        "properties": {
+          "bookId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authorId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
       "AddBookRequestDTO": {
+        "required": [
+          "title"
+        ],
         "type": "object",
         "properties": {
           "title": {
-            "type": "string",
-            "nullable": true
+            "minLength": 10,
+            "type": "string"
           },
           "description": {
             "type": "string",
@@ -470,6 +521,8 @@
             "nullable": true
           },
           "rate": {
+            "maximum": 5,
+            "minimum": 0,
             "type": "integer",
             "format": "int32",
             "nullable": true
