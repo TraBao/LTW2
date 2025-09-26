@@ -1,6 +1,8 @@
-﻿using WebAPI_simple.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using WebAPI_simple.Data;
 using WebAPI_simple.Models.Domain;
 using WebAPI_simple.Models.DTO;
+using System.Threading.Tasks;
 
 namespace WebAPI_simple.Repositories
 {
@@ -12,32 +14,29 @@ namespace WebAPI_simple.Repositories
             _dbContext = dbContext;
         }
 
-        public List<PublisherDTO> GetAllPublishers()
+        public async Task<List<PublisherDTO>> GetAllPublishersAsync()
         {
-            var allPublishers = _dbContext.Publishers.Select(p => new PublisherDTO()
+            return await _dbContext.Publishers.Select(p => new PublisherDTO()
             {
                 Id = p.Id,
                 Name = p.Name
-            }).ToList();
-            return allPublishers;
+            }).ToListAsync();
         }
 
-        public PublisherNoIdDTO GetPublisherById(int id)
+        public async Task<PublisherNoIdDTO?> GetPublisherByIdAsync(int id)
         {
-            var publisher = _dbContext.Publishers.Where(p => p.Id == id)
+            return await _dbContext.Publishers.Where(p => p.Id == id)
                 .Select(p => new PublisherNoIdDTO()
                 {
                     Name = p.Name
-                }).FirstOrDefault();
-            return publisher;
+                }).FirstOrDefaultAsync();
         }
 
-        public PublisherDTO? AddPublisher(AddPublisherRequestDTO addPublisherRequestDTO)
+        public async Task<PublisherDTO?> AddPublisherAsync(AddPublisherRequestDTO addPublisherRequestDTO)
         {
-            var existingPublisher = _dbContext.Publishers
-                .FirstOrDefault(p => p.Name.ToLower() == addPublisherRequestDTO.Name.ToLower());
-
-            if (existingPublisher != null)
+            var nameExists = await _dbContext.Publishers
+                                .AnyAsync(p => p.Name.ToLower() == addPublisherRequestDTO.Name.ToLower());
+            if (nameExists)
             {
                 return null;
             }
@@ -46,40 +45,37 @@ namespace WebAPI_simple.Repositories
             {
                 Name = addPublisherRequestDTO.Name
             };
-            _dbContext.Publishers.Add(publisherDomain);
-            _dbContext.SaveChanges();
-            var publisherDto = new PublisherDTO()
-            {
-                Id = publisherDomain.Id,
-                Name = publisherDomain.Name
-            };
+            await _dbContext.Publishers.AddAsync(publisherDomain);
+            await _dbContext.SaveChangesAsync();
 
-            return publisherDto;
+            return new PublisherDTO { Id = publisherDomain.Id, Name = publisherDomain.Name };
         }
 
-        public PublisherNoIdDTO UpdatePublisherById(int id, PublisherNoIdDTO publisherNoIdDTO)
+        public async Task<PublisherNoIdDTO?> UpdatePublisherByIdAsync(int id, PublisherNoIdDTO publisherNoIdDTO)
         {
-            var publisherDomain = _dbContext.Publishers.FirstOrDefault(p => p.Id == id);
+            var publisherDomain = await _dbContext.Publishers.FirstOrDefaultAsync(p => p.Id == id);
             if (publisherDomain != null)
             {
                 publisherDomain.Name = publisherNoIdDTO.Name;
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
+                return publisherNoIdDTO;
             }
-            return publisherNoIdDTO;
+            return null;
         }
 
-        public Publishers? DeletePublisherById(int id)
+        public async Task<Publishers?> DeletePublisherByIdAsync(int id)
         {
-            var hasBooks = _dbContext.Books.Any(b => b.PublisherID == id);
+            var hasBooks = await _dbContext.Books.AnyAsync(b => b.PublisherID == id);
             if (hasBooks)
             {
                 return null;
             }
-            var publisherDomain = _dbContext.Publishers.FirstOrDefault(p => p.Id == id);
+
+            var publisherDomain = await _dbContext.Publishers.FirstOrDefaultAsync(p => p.Id == id);
             if (publisherDomain != null)
             {
                 _dbContext.Publishers.Remove(publisherDomain);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
             }
             return publisherDomain;
         }

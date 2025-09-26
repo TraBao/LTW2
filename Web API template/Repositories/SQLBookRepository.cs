@@ -15,9 +15,31 @@ namespace WebAPI_simple.Repositories
             _dbContext = dbContext;
         }
 
-        public List<BookWithAuthorAndPublisherDTO> GetAllBooks()
+        public async Task<List<BookWithAuthorAndPublisherDTO>> GetAllBooksAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true,
+            int pageNumber = 1, int pageSize = 100)
         {
-            var allBooksDTO = _dbContext.Books
+            var books = _dbContext.Books.AsQueryable();
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("Title", StringComparison.OrdinalIgnoreCase))
+                {
+                    books = books.Where(x => x.Title.Contains(filterQuery));
+                }
+            }
+            if (string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Equals("Title", StringComparison.OrdinalIgnoreCase))
+                {
+                    books = isAscending ? books.OrderBy(x => x.Title) : books.OrderByDescending(x => x.Title);
+                }
+            }
+
+            var skipResults = (pageNumber - 1) * pageSize;
+            books = books.Skip(skipResults).Take(pageSize);
+
+            var bookDTOs = await books
                 .Include(b => b.Publisher)
                 .Include(b => b.Book_Authors).ThenInclude(ba => ba.Author)
                 .Select(book => new BookWithAuthorAndPublisherDTO()
@@ -32,9 +54,9 @@ namespace WebAPI_simple.Repositories
                     CoverUrl = book.CoverUrl,
                     PublisherName = book.Publisher.Name,
                     AuthorNames = book.Book_Authors.Select(ba => ba.Author.FullName).ToList()
-                }).ToList();
+                }).ToListAsync();
 
-            return allBooksDTO;
+            return bookDTOs;
         }
 
         public BookWithAuthorAndPublisherDTO? GetBookById(int id)

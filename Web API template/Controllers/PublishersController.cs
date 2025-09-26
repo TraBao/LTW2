@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿// File: Controllers/PublishersController.cs
 using Microsoft.AspNetCore.Mvc;
-using WebAPI_simple.CustomActionFilters;
 using WebAPI_simple.Models.DTO;
 using WebAPI_simple.Repositories;
+using System.Threading.Tasks;
 
 namespace WebAPI_simple.Controllers
 {
@@ -17,24 +17,24 @@ namespace WebAPI_simple.Controllers
         }
 
         [HttpGet("get-all-publisher")]
-        public IActionResult GetAllPublishers()
+        public async Task<IActionResult> GetAllPublishers()
         {
-            var allPublishers = _publisherRepository.GetAllPublishers();
+            var allPublishers = await _publisherRepository.GetAllPublishersAsync();
             return Ok(allPublishers);
         }
 
         [HttpGet("get-publisher-by-id/{id}")]
-        public IActionResult GetPublisherById(int id)
+        public async Task<IActionResult> GetPublisherById(int id)
         {
-            var publisher = _publisherRepository.GetPublisherById(id);
+            var publisher = await _publisherRepository.GetPublisherByIdAsync(id);
+            if (publisher == null) return NotFound();
             return Ok(publisher);
         }
 
         [HttpPost("add-publisher")]
-        [ValidateModel]
-        public IActionResult AddPublisher([FromBody] AddPublisherRequestDTO addPublisherRequestDTO)
+        public async Task<IActionResult> AddPublisher([FromBody] AddPublisherRequestDTO addPublisherRequestDTO)
         {
-            var newPublisher = _publisherRepository.AddPublisher(addPublisherRequestDTO);
+            var newPublisher = await _publisherRepository.AddPublisherAsync(addPublisherRequestDTO);
             if (newPublisher == null)
             {
                 return BadRequest($"Tên nhà xuất bản '{addPublisherRequestDTO.Name}' đã tồn tại.");
@@ -43,25 +43,28 @@ namespace WebAPI_simple.Controllers
         }
 
         [HttpPut("update-publisher-by-id/{id}")]
-        public IActionResult UpdatePublisherById(int id, [FromBody] PublisherNoIdDTO publisherNoIdDTO)
+        public async Task<IActionResult> UpdatePublisherById(int id, [FromBody] PublisherNoIdDTO publisherNoIdDTO)
         {
-            var updatedPublisher = _publisherRepository.UpdatePublisherById(id, publisherNoIdDTO);
+            var updatedPublisher = await _publisherRepository.UpdatePublisherByIdAsync(id, publisherNoIdDTO);
+            if (updatedPublisher == null) return NotFound();
             return Ok(updatedPublisher);
         }
 
         [HttpDelete("delete-publisher-by-id/{id}")]
-        public IActionResult DeletePublisherById(int id)
+        public async Task<IActionResult> DeletePublisherById(int id)
         {
-            var publisherExists = _publisherRepository.GetPublisherById(id);
+            var publisherExists = await _publisherRepository.GetPublisherByIdAsync(id);
             if (publisherExists == null)
             {
                 return NotFound();
             }
-            var deletedPublisher = _publisherRepository.DeletePublisherById(id);
-            if (deletedPublisher == null)
+
+            var deletedPublisherDomain = await _publisherRepository.DeletePublisherByIdAsync(id);
+            if (deletedPublisherDomain == null)
             {
-                return BadRequest($"Không thể xóa Nhà xuất bản này vì vẫn còn sách tham chiếu.");
+                return BadRequest("Không thể xóa nhà xuất bản này vì vẫn còn sách tham chiếu.");
             }
+
             return NoContent();
         }
     }

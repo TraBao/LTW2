@@ -6,7 +6,10 @@ namespace WebAPI_simple.Repositories
 {
     public interface IBookRepository
     {
-        List<BookWithAuthorAndPublisherDTO> GetAllBooks();
+        Task<List<BookWithAuthorAndPublisherDTO>> GetAllBooksAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true,
+            int pageNumber = 1, int pageSize = 100);
         BookWithAuthorAndPublisherDTO? GetBookById(int id);
         Result<Books> AddBook(AddBookRequestDTO addBookRequestDTO);
 

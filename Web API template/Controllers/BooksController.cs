@@ -16,9 +16,16 @@ namespace WebAPI_simple.Controllers
         }
 
         [HttpGet("get-all-books")]
-        public IActionResult GetAllBooks()
+        public async Task<IActionResult> GetAllBooks(
+            [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
+            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 100)
         {
-            var allBooks = _bookRepository.GetAllBooks();
+            var allBooks = await _bookRepository.GetAllBooksAsync(
+                filterOn, filterQuery,
+                sortBy, isAscending ?? true,
+                pageNumber, pageSize
+            );
             return Ok(allBooks);
         }
 

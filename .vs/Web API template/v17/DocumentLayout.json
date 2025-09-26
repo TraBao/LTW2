@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\sqlbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\sqlbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\sqlpublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\sqlpublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\ipublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\ipublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\controllers\\bookauthorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,24 +55,8 @@
       "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\ibookauthorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\sqlbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\sqlbookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\sqlpublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\sqlpublisherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\helpers\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\helpers\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|solutionrelative:web api template\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7BB8DCDB-2466-411F-A034-F3B3156EEA1D}|Web API template\\WebAPI_simple.csproj|c:\\users\\admin\\onedrive\\desktop\\web api template\\web api template\\models\\dto\\addauthorrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -173,60 +173,77 @@
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Program.cs",
-              "RelativeDocumentMoniker": "Web API template\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Program.cs",
-              "RelativeToolTip": "Web API template\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:06:03.192Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAuthorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IAuthorRepository.cs",
-              "RelativeDocumentMoniker": "Web API template\\Repositories\\IAuthorRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IAuthorRepository.cs",
-              "RelativeToolTip": "Web API template\\Repositories\\IAuthorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IBookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IBookRepository.cs",
+              "RelativeDocumentMoniker": "Web API template\\Repositories\\IBookRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IBookRepository.cs",
+              "RelativeToolTip": "Web API template\\Repositories\\IBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:49:18.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SQLAuthorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLAuthorRepository.cs",
-              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLAuthorRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLAuthorRepository.cs",
-              "RelativeToolTip": "Web API template\\Repositories\\SQLAuthorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:51:55.637Z",
+              "WhenOpened": "2025-09-17T06:58:12.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthorsController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\AuthorsController.cs",
-              "RelativeDocumentMoniker": "Web API template\\Controllers\\AuthorsController.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\AuthorsController.cs",
-              "RelativeToolTip": "Web API template\\Controllers\\AuthorsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Title": "SQLBookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLBookRepository.cs",
+              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLBookRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLBookRepository.cs",
+              "RelativeToolTip": "Web API template\\Repositories\\SQLBookRepository.cs",
+              "ViewState": "AgIAAKoAAACAAAAAAAAgwMUAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:54:01.956Z",
+              "WhenOpened": "2025-09-17T06:58:29.932Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Web API template\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Web API template\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAACwAAABgMzMzMzMywDIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:07:15.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SQLPublisherRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLPublisherRepository.cs",
+              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLPublisherRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLPublisherRepository.cs",
+              "RelativeToolTip": "Web API template\\Repositories\\SQLPublisherRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:58:32.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PublishersController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\PublishersController.cs",
+              "RelativeDocumentMoniker": "Web API template\\Controllers\\PublishersController.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\PublishersController.cs",
+              "RelativeToolTip": "Web API template\\Controllers\\PublishersController.cs",
+              "ViewState": "AgIAADMAAAAA0MzMzMz8vzgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:59:54.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "IPublisherRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IPublisherRepository.cs",
               "RelativeDocumentMoniker": "Web API template\\Repositories\\IPublisherRepository.cs",
@@ -239,7 +256,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "Web API template\\Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "Web API template\\Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:54:01.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SQLAuthorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLAuthorRepository.cs",
+              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLAuthorRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLAuthorRepository.cs",
+              "RelativeToolTip": "Web API template\\Repositories\\SQLAuthorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:51:55.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IAuthorRepository.cs",
+              "RelativeDocumentMoniker": "Web API template\\Repositories\\IAuthorRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IAuthorRepository.cs",
+              "RelativeToolTip": "Web API template\\Repositories\\IAuthorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:49:18.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Program.cs",
+              "RelativeDocumentMoniker": "Web API template\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Program.cs",
+              "RelativeToolTip": "Web API template\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T07:06:03.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "BookAuthorsController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\BookAuthorsController.cs",
               "RelativeDocumentMoniker": "Web API template\\Controllers\\BookAuthorsController.cs",
@@ -247,29 +312,11 @@
               "RelativeToolTip": "Web API template\\Controllers\\BookAuthorsController.cs",
               "ViewState": "AgIAAAsAAABgZmZmZmYowCEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T03:13:26.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-09-22T03:13:26.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SQLPublisherRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLPublisherRepository.cs",
-              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLPublisherRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLPublisherRepository.cs",
-              "RelativeToolTip": "Web API template\\Repositories\\SQLPublisherRepository.cs",
-              "ViewState": "AgIAAD8AAACAZmZmZmYawFIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:58:32.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "IBookAuthorRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IBookAuthorRepository.cs",
               "RelativeDocumentMoniker": "Web API template\\Repositories\\IBookAuthorRepository.cs",
@@ -277,12 +324,11 @@
               "RelativeToolTip": "Web API template\\Repositories\\IBookAuthorRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T03:11:35.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T03:11:35.638Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "SQLBookAuthorRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLBookAuthorRepository.cs",
               "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLBookAuthorRepository.cs",
@@ -290,38 +336,11 @@
               "RelativeToolTip": "Web API template\\Repositories\\SQLBookAuthorRepository.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T03:12:10.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T03:12:10.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BooksController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\BooksController.cs",
-              "RelativeDocumentMoniker": "Web API template\\Controllers\\BooksController.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "Web API template\\Controllers\\BooksController.cs",
-              "ViewState": "AgIAABkAAADAzMzMzMw9wCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:07:15.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IBookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IBookRepository.cs",
-              "RelativeDocumentMoniker": "Web API template\\Repositories\\IBookRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\IBookRepository.cs",
-              "RelativeToolTip": "Web API template\\Repositories\\IBookRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T06:58:12.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Result.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Helpers\\Result.cs",
               "RelativeDocumentMoniker": "Web API template\\Helpers\\Result.cs",
@@ -329,34 +348,7 @@
               "RelativeToolTip": "Web API template\\Helpers\\Result.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T02:59:11.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PublishersController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\PublishersController.cs",
-              "RelativeDocumentMoniker": "Web API template\\Controllers\\PublishersController.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Controllers\\PublishersController.cs",
-              "RelativeToolTip": "Web API template\\Controllers\\PublishersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:59:54.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SQLBookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLBookRepository.cs",
-              "RelativeDocumentMoniker": "Web API template\\Repositories\\SQLBookRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\Web API template\\Web API template\\Repositories\\SQLBookRepository.cs",
-              "RelativeToolTip": "Web API template\\Repositories\\SQLBookRepository.cs",
-              "ViewState": "AgIAAI4AAACAzMzMzMwcwJUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T06:58:29.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T02:59:11.162Z"
             },
             {
               "$type": "Document",
@@ -368,8 +360,7 @@
               "RelativeToolTip": "Web API template\\Models\\DTO\\AddAuthorRequestDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:48:50.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T07:48:50.338Z"
             },
             {
               "$type": "Document",
@@ -381,8 +372,7 @@
               "RelativeToolTip": "Web API template\\CustomActionFilters\\ValidateModelAttribute.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T01:01:46.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T01:01:46.481Z"
             },
             {
               "$type": "Document",
@@ -394,8 +384,7 @@
               "RelativeToolTip": "Web API template\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T07:50:26.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T07:50:26.521Z"
             },
             {
               "$type": "Document",
@@ -407,8 +396,7 @@
               "RelativeToolTip": "Web API template\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T08:31:50.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T08:31:50.8Z"
             },
             {
               "$type": "Document",
@@ -420,8 +408,7 @@
               "RelativeToolTip": "Web API template\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-17T07:14:25.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T07:14:25.407Z"
             },
             {
               "$type": "Document",
@@ -433,8 +420,7 @@
               "RelativeToolTip": "Web API template\\Models\\DTO\\AddBookRequestDTO.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T06:59:09.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T06:59:09.748Z"
             },
             {
               "$type": "Document",
