@@ -22,7 +22,7 @@ namespace Web_API_template.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Authors", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Authors", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace Web_API_template.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Book_Author", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Book_Author", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,7 +79,7 @@ namespace Web_API_template.Migrations
                     b.ToTable("Books_Authors");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Books", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Books", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -101,7 +101,6 @@ namespace Web_API_template.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Genre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsRead")
@@ -124,7 +123,38 @@ namespace Web_API_template.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Publishers", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FileDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileExtension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("FileSizeInBytes")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Publishers", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,15 +188,15 @@ namespace Web_API_template.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Book_Author", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Book_Author", b =>
                 {
-                    b.HasOne("Web_API_simple.Models.Domain.Authors", "Author")
+                    b.HasOne("WebAPI_simple.Models.Domain.Authors", "Author")
                         .WithMany("Book_Authors")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_API_simple.Models.Domain.Books", "Book")
+                    b.HasOne("WebAPI_simple.Models.Domain.Books", "Book")
                         .WithMany("Book_Authors")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -177,9 +207,9 @@ namespace Web_API_template.Migrations
                     b.Navigation("Book");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Books", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Books", b =>
                 {
-                    b.HasOne("Web_API_simple.Models.Domain.Publishers", "Publisher")
+                    b.HasOne("WebAPI_simple.Models.Domain.Publishers", "Publisher")
                         .WithMany("Books")
                         .HasForeignKey("PublisherID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -188,17 +218,17 @@ namespace Web_API_template.Migrations
                     b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Authors", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Authors", b =>
                 {
                     b.Navigation("Book_Authors");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Books", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Books", b =>
                 {
                     b.Navigation("Book_Authors");
                 });
 
-            modelBuilder.Entity("Web_API_simple.Models.Domain.Publishers", b =>
+            modelBuilder.Entity("WebAPI_simple.Models.Domain.Publishers", b =>
                 {
                     b.Navigation("Books");
                 });

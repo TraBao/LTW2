@@ -1,0 +1,37 @@
+﻿@model BookWebApp.Models.DTO.AddBookRequestDTO
+
+<h1>Chỉnh Sửa Sách</h1>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Title" class="form-label">Tiêu đề</label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Description" class="form-label">Mô tả</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Rate" class="form-label">Đánh giá (0-5)</label>
+        <input type="number" asp-for="Rate" class="form-control" min="0" max="5" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DateAdded" class="form-label">Ngày thêm</label>
+        <input type="date" asp-for="DateAdded" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PublisherID" class="form-label">Nhà xuất bản</label>
+        <select asp-for="PublisherID" class="form-control" asp-items="@(new SelectList(ViewBag.Publishers, "Id", "Name"))"></select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="AuthorIds" class="form-label">Tác giả</label>
+        <select asp-for="AuthorIds" class="form-control" asp-items="@(new SelectList(ViewBag.Authors, "Id", "FullName"))" multiple></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+</form>
